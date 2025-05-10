@@ -4,14 +4,13 @@ import org.bson.types.ObjectId
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.Instant
-import javax.print.attribute.standard.DialogOwner
 
-@Document(collection = "notes")
+@Document("notes")
 data class Note(
     val title: String,
     val content: String,
     val color: Long,
     val createdAt: Instant,
-    val ownerID: ObjectId,
+    val  ownerID: ObjectId,
     @Id val id: ObjectId = ObjectId.get(),
 )
